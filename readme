@@ -1,0 +1,11 @@
+This is readme file file for my web-app blog in python
+This web-app use following technology
+1.platform:Google app engine
+2.language:Python,html,css
+3.Template engine:Jinja2 
+4.JSON
+ with the help of Udacity
+
+This project is deployed on google cloud:
+
+rohit-cs253.appspot.com 
