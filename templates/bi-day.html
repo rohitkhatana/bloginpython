@@ -1,0 +1,81 @@
+
+    <html>
+	<head>
+		<style type="text/css">
+			body{
+				front-family: sans-serif; width: 800px; margin: 0 auto; padding: 10px;
+				}
+			error{
+				color: red;
+			}
+			label{
+				display: block; font-size: 39px;color: red;
+			}
+			input[type=text]{
+				width: 400px; front-size: 20px; padding: 2px;
+			}
+			textarea{
+				width: 400px; font-size: 20px; padding; 2px;
+			}
+			input[type=submit]{
+				font-size: 20px;
+			}
+			hr{
+				margin: 20px auto;
+			}
+			
+			.art + .art{
+				margin-top: 20px;
+			}
+			.art-title{
+				font-weight: bold; font-size: 20px;
+			}
+			.art-body{
+				margin: 0; font-size: 17px;
+			}
+			
+	
+		</style>
+		
+	</head>
+		<body background="/images/webb.png">
+        <form method="post">
+		<!-- Facebook Badge START --><a href="https://www.facebook.com/rohit.khatana.568" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Rohit Khatana">Rohit Khatana</a><br/><a href="https://www.facebook.com/rohit.khatana.568" target="_TOP" title="Rohit Khatana"><img src="https://badge.facebook.com/badge/100001599557178.2335.2095233156.png" style="border: 0px;" /></a><br/><a href="https://www.facebook.com/badges/" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Make your own badge!"></a><!-- Facebook Badge END -->
+			
+			<a href="/rot13">ROT13</a>
+            <br>
+			<div><a href="/blog" style="color:RED; font-size:20px;">BLOG</a></div>
+            <div><a href="/signup" style="color:RED; font-size:20px;">SIGNUP</a></div>
+			<div><a href="/unit3/ascii" style="color:GREEN; font-size:35px;">Ascii</a></div>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/OT8jZgGAtoc" frameborder="0" allowfullscreen></iframe>
+			
+			<canvas id="lookwhatIdrew" width="600" height="20"></canvas>
+			
+            <label>What is your birthday?</label>
+            
+			<canvas id="lookwhatIdrew" width="20" height="20"></canvas>
+			<table>
+			<tr>
+				<td style="color:Blue; font-size:30;">Day</td>
+				<td><input type="text" name="day" value="{{day}}"></td>
+            <tr>
+				<td style="color:YELLOW;font-size:30; ">Month</td>
+				<td><input type="text" name="month" value="{{month}}"></td>
+			<tr>
+				<td style="font-size:30;">Year</td>
+				<td><input type="text" name="year" value="{{year}}"></td>
+			</table>
+            <div style="color: red">{{error_day}}</div>
+			<div style="color: red">{{error_year}}</div>
+			<div style="color: red">{{error_month}}</div>
+			
+			<canvas id="lookwhatIdrew" width="20" height="20"></canvas>
+            <br>
+            <br>
+            <input type="submit">
+	
+        </form>
+	
+
+		</body>
+    </html>

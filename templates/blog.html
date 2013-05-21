@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<title>CS253-BLOG</title>
+		<style type="text/css">
+			body{	
+			font-family:Helvetica, Arial, sans-serif; width:800px;padding: 20px;margin: 0 auto;font-size: 14px;
+		}
+.tab{
+	margin: 0 0 0 430px;
+}
+.main-title {
+    display: block;
+    color: #222;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.sub{
+		font-size:30px;color:RED;
+	}
+.content{
+	font-size:20px;color:BLUE;
+	}
+	.dt{
+	position: absolute;
+	margin: 0 0 0 450px;
+    color: #999;
+	}
+	.login-link{
+		 color: gray;
+		text-decoration: none;
+	}
+	.query{
+	
+		font-size:15px;
+		color:gray;
+		position:relative;
+		bottom:0.3cm;
+		left:20cm;
+	}
+		</style>
+	</head>
+	<body>
+		<table cellspacing="40" >
+		<tr>
+			<td><div class="main-title">POST-IT</div></td><td><label class="tab"><a href="/blog/newpost">NEW POST</a></label></td>
+		</table>
+		{% if name %}
+		<span class="login-link">{{name}}</span>
+		|
+		<a class="login-link" href="/logout">logout</a>
+		{% else %}
+		<a class="login-link" href="/signup">singup</a>
+		|
+		<a class="login-link" href="/login">login</a>
+		{% endif %}
+		<hr>
+		{% for post in posts %}
+			<div class="sub">{{post.subject |safe}}</div>
+			<div class="content">{{post.content}}</div>
+			<div class="dt">{{post.last_modified.strftime("%b %d, %y")}}</div>
+		<br><br>
+		{% endfor %}
+		<div class="query">queried {{time}} seconds ago</div>
+	</body>
+</html>

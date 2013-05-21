@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Ascii-chain</title>
+	</head>
+		<style type="text/css">
+			body{
+				font-family: sans-serif; width: 800px; margin: 0 auto; padding: 10px;
+				}
+			error{
+				color: red;
+			}
+			h2{
+				color: 49A66C;font-size: 25px;
+			}
+			label{
+				display: block; font-size: 20px;
+			}
+			input[type=text]{
+				width: 400px; font-size: 20px; padding: 2px;
+			}
+			textarea{
+				height: 200px; width: 400px; font-size: 20px; padding; 2px;
+			}
+			input[type=submit]{
+				font-size: 20px;
+			}
+			hr{
+				margin: 20px auto;
+			}
+			
+			.art + .art{
+				margin-top: 20px;
+			}
+			.art-title{
+				font-weight: bold; font-size: 20px;
+			}
+			.art-body{
+				margin: 0; font-size: 17px;
+			}
+			.map
+			{
+				position: absolute;
+				right: 0;
+				top: 112px
+			}
+		</style>
+	<body>
+	<form method="post">
+		<h1>ASCII-CHAIN</h1>
+		<label>
+			<div>Title</div><input type="text" name="title" value="{{title}}">
+		</label>
+		<label>
+			<div>Art</div> 
+			<textarea name="art">{{art}}</textarea>
+		</label>
+		<div class="error">{{error}}</div>
+		<input type="submit">
+		<h2>Made by:<br>
+				<marquee>ROHIT KHATANA</marquee></h2>
+		</form>
+		{% if img_url %}
+			<img class="map" src="{{img_url}}" >
+		{% endif %}
+		<hr>
+		{% for art in arts %}
+		<div class="art">
+			<div class="art-title">{{art.title}}</div>
+			<pre class="art-body">{{art.art}}</pre>
+		</div>
+		{% endfor %}
+	</body>
+</html>

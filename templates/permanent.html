@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>your post</title>
+		<style>
+			.sub{
+				font-size:30px;color:red;margin: 0 20px 20px 250px;
+			}
+			.content{
+				font-size:20px;color:red;
+			}
+			.title{
+				font-size:20px;color:red;
+			}
+			.query{
+				font-size:15px;
+				color:gray;
+				position:relative;
+				bottom:0.3cm;
+				left:20cm;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<a href="/blog">BLOG</a>
+		<hr>
+		<div class="sub">{{blog.subject}}</div>
+		<div class="content">{{blog.content}}</div>
+		<div class="query">queried {{time}} seconds ago</div>
+		
+	</body>
+</html>

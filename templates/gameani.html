@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>BOT</title>
+		<script type="text/javascript">
+		var canvas = null;
+		var context = null;
+		var xco = 0;
+		var yco = 0;
+		var xdir=0;
+		var ydir=0;
+		var framerate=1000/30;
+		var assets = ['/images/game/robo1.png',
+		'/images/game/robo2.png',
+		'/images/game/robo3.png',
+		'/images/game/robo4.png',
+		'/images/game/robo5.png',
+		'/images/game/robo6.png',
+		'/images/game/robo7.png',
+		'/images/game/robo8.png',
+		'/images/game/robo9.png',
+		'/images/game/robo10.png',
+		'/images/game/robo11.png',
+		'/images/game/robo12.png',
+		'/images/game/robo13.png',
+		'/images/game/robo14.png',
+		'/images/game/robo15.png',
+		'/images/game/robo16.png',
+		'/images/game/robo17.png',
+		'/images/game/robo18.png',
+		'/images/game/robo19.png'];
+
+		var frames = [];
+		var current=0;
+		
+		var onImageLoad = function(){
+    console.log("IMAGE!!!");
+};
+		var setup = function()
+		{
+			body = document.getElementById("body");
+			canvas = document.createElement("canvas");
+			
+			context = canvas.getContext('2d');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			
+			body.appendChild(canvas);
+			i=0;
+			for(i=0; i<assets.length;i++)
+			{
+				frames[i] = new Image();
+				frames[i].onload = onImageLoad;
+				frames[i].src = assets[i];
+			}
+			//context.drawImage(frames[1],192,192);
+			setInterval(animate,framerate);
+		};
+		var animate = function()
+		{
+				 context.clearRect(0,0,canvas.width, canvas.height);
+				 if( current >= frames.length)
+    {
+        current=0;
+    }
+				context.drawImage(frames[current],xco,yco);
+				current++;
+				if (xco >= canvas.width)
+				{
+					xco = 0;
+				}
+				
+				if (yco >= canvas.height)
+				{
+					yco=0;
+				}
+				xco++;
+				yco=yco+4;
+				//xco =Math.floor((Math.random()*1600)+1);
+				//yco=Math.floor((Math.random()*500)+1);
+			//currFrame= (currFrame+1)% frames.length;
+		
+		};
+	
+		
+		setup();
+		</script>
+
+
+
+
+	</head>
+	<body id="body" onload="setup();">
+	
+	</body>
+</html>
